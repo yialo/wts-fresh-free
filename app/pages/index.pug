@@ -3,5 +3,14 @@ extends ../base/_page_template
 block page
   body.freshfree-page
     .freshfree-page__container
+      .freshfree-intro.freshfree-page__intro
+        .freshfree-s_container.freshfree-intro__container
+          .freshfree-logo.freshfree-intro__logo
+            h1.freshfree-logo__wrapper(aria-labelledby='logo')
+              img.freshfree-logo__image(
+                id='logo'
+                src='img/freshfree-logo.svg',
+                alt='Fresh & Free',
+              )
 
     script(src='js/picturefill.js')
