@@ -1,7 +1,6 @@
-div(class=[
-  'freshfree-projecting',
-  getModifiers('freshfree-page__nest', ['projecting']),
-])
+.freshfree-projecting(
+  class=getModifiers('freshfree-page__nest', ['projecting'])
+)
   - const PROJECTING_ASIDE_PICTURES = ['Ветка', 'Орехи и сухофрукты'];
   mixin freshfree-projecting__picture--flow(number)
     +freshfree-s_picture()(
