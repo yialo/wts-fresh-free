@@ -1,0 +1,14 @@
+.freshfree-design__picture {
+  &--1 {
+    grid-area: 2 / 1 / 4 / 3;
+    z-index: 1;
+    width: 531px;
+    height: 860px;
+  }
+
+  &--2 {
+    grid-area: 1 / 2 / 4 / 4;
+    width: 542px;
+    height: 1041px;
+  }
+}

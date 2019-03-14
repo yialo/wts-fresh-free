@@ -1,0 +1,9 @@
+.freshfree-design__row {
+  display: grid;
+
+  &--top {
+    grid-template: 1fr repeat(3, auto) / auto 24px 1fr;
+    padding-left: var(--g_page-left-shift);
+    padding-right: 144px;
+  }
+}

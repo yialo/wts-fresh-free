@@ -1,0 +1,19 @@
+.freshfree-design(class=getModifiers('freshfree-page__nest', ['design']))
+  .freshfree-s_container.freshfree-design__container
+    div(class=getModifiers('freshfree-design__row', ['top']))
+      div(class=[
+        getModifiers('freshfree-s_textblock', ['white']),
+        getModifiers('freshfree-design__textblock', ['full']),
+      ])
+        h2.freshfree-s_headline.freshfree-s_textblock__headline.freshfree-design__headline Дизайн
+        p.freshfree-s_subtitle.freshfree-s_textblock__subtitle.freshfree-design__subtitle Разработка дизайна главной страницы
+        p.freshfree-s_paragraph(class=[
+          getModifiers('freshfree-s_textblock__paragraph', ['last']),
+          'freshfree-design__paragraph',
+        ]) Аудит и тестирование аналогичных интернет-магазинов показали, что для пользователей важно наличие на сайте ярких и насыщенных фотографий продукции.
+      each number in [1, 2]
+        +freshfree-s_picture()(
+          class=getModifiers('freshfree-design__picture', [number]),
+          src=`img/freshfree-design__image--${number}.jpg`,
+          alt=`Пример дизайна страницы №${number}`,
+        )

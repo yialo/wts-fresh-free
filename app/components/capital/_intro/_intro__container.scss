@@ -2,6 +2,6 @@
   display: grid;
   grid-template: 111px 1fr / 646px 1fr;
   padding-top: 175px;
-  padding-left: 208px;
+  padding-left: var(--g_page-left-shift);
   padding-bottom: 128px;
 }

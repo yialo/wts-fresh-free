@@ -1,9 +1,4 @@
 .freshfree-analysis(class=getModifiers('freshfree-page__nest', ['analysis']))
-  -
-    const ANALYSIS_PARAGRAPHS = [
-      'Мониторинг конкурентов, изучение целевой аудитории',
-      'Наши специалисты проанализировали большое кол-во интернет магазинов по продаже продуктов здорового питания. Результаты показали, что для такого ресурса большое значение имеет детальное описание продукции с основными ценностями компонентов и удобное разделение каталога на отдельные категории.',
-    ];
   .freshfree-s_container.freshfree-analysis__container
     +freshfree-s_picture().freshfree-analysis__picture(
       src='img/freshfree-analysis__image.jpg',
@@ -17,9 +12,8 @@
         'freshfree-s_textblock__headline',
         'freshfree-analysis__headline',
       ]) Анализ рынка
-      each paragraph, index in ANALYSIS_PARAGRAPHS
-        - const number = index + 1;
-        p.freshfree-s_paragraph(class=[
-          getLastModifier('freshfree-s_textblock__paragraph', ANALYSIS_PARAGRAPHS, number),
-          getModifiers('freshfree-analysis__paragraph', [number]),
-        ])= paragraph
+      p.freshfree-s_subtitle.freshfree-s_textblock__subtitle.freshfree-analysis__subtitle Мониторинг конкурентов, изучение целевой аудитории
+      p.freshfree-s_paragraph(class=[
+        getModifiers('freshfree-s_textblock__paragraph', ['last']),
+        'freshfree-analysis__paragraph',
+      ]) Наши специалисты проанализировали большое кол-во интернет магазинов по продаже продуктов здорового питания. Результаты показали, что для такого ресурса большое значение имеет детальное описание продукции с основными ценностями компонентов и удобное разделение каталога на отдельные категории.
