@@ -24,6 +24,10 @@ const zopfli = require('imagemin-zopfli');
 
 // Vinyl variables
 
+const imageProcessingPaths = {
+  base: './spec/img-processing/',
+  output: './spec/img-processing/output/',
+};
 const bitmapExts = '{gif,jpg,png}';
 const fontExts = '{woff,woff2}';
 const jsPaths = [
@@ -36,7 +40,7 @@ const jsPaths = [
 
 const minsvg = function mimimizeSvgImages() {
   return gulp
-    .src('./spec/img-raw/*.svg')
+    .src(`${imageProcessingPaths.base}*.svg`)
     .pipe(
       minimage([
         minimage.svgo({
@@ -89,12 +93,12 @@ const minsvg = function mimimizeSvgImages() {
         }),
       ]),
     )
-    .pipe(gulp.dest('./spec/img-output/'));
+    .pipe(gulp.dest(imageProcessingPaths.output));
 };
 
 const minbitmap = function minimizeBitmapImages() {
   return gulp
-    .src(`./spec/img-raw/*.${bitmapExts}`)
+    .src(`${imageProcessingPaths.base}*.${bitmapExts}`)
     .pipe(
       minimage([
         gifsicle(),
@@ -104,7 +108,7 @@ const minbitmap = function minimizeBitmapImages() {
         zopfli({ more: true }),
       ]),
     )
-    .pipe(gulp.dest('./spec/img-output/'));
+    .pipe(gulp.dest(imageProcessingPaths.output));
 };
 
 const cleanbuild = function deleteFormerBuildFolder() {
