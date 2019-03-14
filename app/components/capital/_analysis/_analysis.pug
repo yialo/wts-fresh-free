@@ -18,16 +18,6 @@
       each paragraph, index in ANALYSIS_PARAGRAPHS
         - const number = index + 1;
         p.freshfree-s_paragraph(class=[
-          'freshfree-s_textblock__paragraph',
-          (
-            number === ANALYSIS_PARAGRAPHS.length
-            ? 'freshfree-s_textblock__paragraph--last'
-            : null
-          ),
-          'freshfree-analysis__paragraph',
-          `freshfree-analysis__paragraph--${number}`,
+          getLastModifier('freshfree-s_textblock__paragraph', ANALYSIS_PARAGRAPHS, number),
+          getModifiers('freshfree-analysis__paragraph', [number]),
         ])= paragraph
-
-
-
-//- .freshfree-analysis__
