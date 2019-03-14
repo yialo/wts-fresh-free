@@ -3,10 +3,8 @@
   $fontSize: 22px,
   $fontFamily: helveticaneuecyr,
 ) {
-  font: {
-    weight: $fontWeight;
-    size: $fontSize;
-    family: "#{$fontFamily}", "Arial", sans-serif;
-  }
+  font-weight: $fontWeight;
+  font-size: $fontSize;
+  font-family: "#{$fontFamily}", "Arial", sans-serif;
   letter-spacing: 0.25px;
 }

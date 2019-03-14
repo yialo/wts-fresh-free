@@ -5,10 +5,7 @@
       'Основная задача - показать пользователям доступным языком все выгоды от приобретения инновационных продуктовпитания.',
     ];
   .freshfree-s_container.freshfree-intro__container
-    .freshfree-logo(class=[
-      'freshfree-intro__nest',
-      'freshfree-intro__nest--logo',
-    ])
+    .freshfree-logo(class=getModifiers('freshfree-intro__nest', ['logo']))
       img.freshfree-logo__image(
         src='img/freshfree-logo.svg',
         alt=SITE_TITLE,
@@ -16,10 +13,7 @@
         height='111',
       )
       h1.freshfree-s_visually-hidden.freshfree-logo__wrapper= SITE_TITLE
-    .freshfree-s_textblock(class=[
-      'freshfree-intro__nest',
-      'freshfree-intro__nest--textblock',
-    ])
+    .freshfree-s_textblock(class=getModifiers('freshfree-intro__nest', ['textblock']))
       h2(class=[
         'freshfree-s_headline',
         'freshfree-s_textblock__headline',
@@ -28,17 +22,11 @@
       each paragraph, index in INTRO_PARAGRAPHS
         - const number = index + 1;
         p.freshfree-s_paragraph(class=[
-          'freshfree-s_textblock__paragraph',
-          (
-            number === INTRO_PARAGRAPHS.length
-            ? 'freshfree-s_textblock__paragraph--last'
-            : null
-          ),
-          'freshfree-intro__paragraph',
-          `freshfree-intro__paragraph--${number}`,
+          getLastModifier('freshfree-s_textblock__paragraph', INTRO_PARAGRAPHS, number),
+          getModifiers('freshfree-s_textblock__paragraph', [number]),
         ])= paragraph
     +freshfree-s_picture()(
-      class=['freshfree-intro__nest', 'freshfree-intro__nest--picture'],
+      class=getModifiers('freshfree-intro__nest', ['picture']),
       src='img/freshfree-intro__picture.png',
       alt='Чашка с чаем',
     )

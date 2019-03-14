@@ -5,6 +5,7 @@
   margin-top: 0;
   margin-bottom: 0;
   line-height: 52px;
+  text-transform: uppercase;
 
   &::before {
     content: "";
@@ -12,5 +13,9 @@
     height: 29px;
     margin-right: 32px;
     background-color: $salad;
+  }
+
+  &--small {
+    font-size: 36px;
   }
 }
