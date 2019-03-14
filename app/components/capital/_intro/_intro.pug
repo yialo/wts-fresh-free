@@ -5,16 +5,21 @@
       'Основная задача - показать пользователям доступным языком все выгоды от приобретения инновационных продуктовпитания.',
     ];
   .freshfree-s_container.freshfree-intro__container
-    .freshfree-logo.freshfree-intro__logo
+    .freshfree-logo(class=[
+      'freshfree-intro__nest',
+      'freshfree-intro__nest--logo',
+    ])
       img.freshfree-logo__image(
         src='img/freshfree-logo.svg',
-        alt='Fresh & Free',
+        alt=SITE_TITLE,
         width='648',
         height='111',
       )
-      h1.freshfree-s_visually-hidden.freshfree-logo__wrapper
-        | Fresh & Free
-    .freshfree-s_textblock.freshfree-intro__textblock
+      h1.freshfree-s_visually-hidden.freshfree-logo__wrapper= SITE_TITLE
+    .freshfree-s_textblock(class=[
+      'freshfree-intro__nest',
+      'freshfree-intro__nest--textblock',
+    ])
       h2(class=[
         'freshfree-s_headline',
         'freshfree-s_textblock__headline',
@@ -32,3 +37,8 @@
           'freshfree-intro__paragraph',
           `freshfree-intro__paragraph--${number}`,
         ])= paragraph
+    +freshfree-s_picture()(
+      class=['freshfree-intro__nest', 'freshfree-intro__nest--picture'],
+      src='img/freshfree-intro__picture.png',
+      alt='Чашка с чаем',
+    )

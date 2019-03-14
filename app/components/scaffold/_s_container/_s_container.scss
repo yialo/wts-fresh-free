@@ -1,0 +1,5 @@
+.freshfree-s_container {
+  @include outline(blue);
+  @include margin-hor();
+  width: $l-max-width;
+}

@@ -1,4 +1,4 @@
-mixin freshfree-s_picture(attributes)
-  - { src, alt } = attributes;
-  picture.freshfree-s_picture(class=attributes.class)
+mixin freshfree-s_picture()
+  - const { class: classnames, src, alt } = attributes;
+  picture.freshfree-s_picture(class=classnames)
     img.freshfree-s_picture__image(src=src, alt=alt)

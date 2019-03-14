@@ -1,0 +1,20 @@
+.freshfree-intro__nest {
+  &--logo {
+    grid-area: 1 / 1 / 2 / 3;
+    width: 648px;
+    height: 111px;
+  }
+
+  &--textblock {
+    grid-area: 2 / 1 / 2 / 3;
+    width: 578px;
+    margin-top: 184px;
+    color: $gray;
+  }
+
+  &--picture {
+    grid-area: 2 / 2 / 3 / 3;
+    width: 442px;
+    height: 446px;
+  }
+}
