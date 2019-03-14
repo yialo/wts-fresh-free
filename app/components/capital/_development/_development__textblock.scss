@@ -1,3 +1,10 @@
 .freshfree-development__textblock {
-  width: 700px;
+  &--1 {
+    width: 700px;
+    margin-bottom: 64px;
+  }
+
+  &--2 {
+    width: 650px;
+  }
 }

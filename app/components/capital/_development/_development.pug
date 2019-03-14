@@ -1,20 +1,26 @@
 .freshfree-development(
   class=getModifiers('freshfree-page__nest', ['development'])
 )
+  -
+    const DEVELOPMENT_PARAGRAPHS = [
+      'Основной задачей на данном этапе стала реализация системы лояльности, которая помогает формировать клиентскую базу. Покупатели получают специальные бонусы на праздники, дни рождения, а также в зависимости от совершаемых покупок начисляются баллы, которыми можно расплачиваться в дальнейшем.',
+      'Для проекта была подобрана оптимальная команда, которая позволила разработать проект отконцепции с учетом пожеланий клиента до полной реализации и развития интернет-магазина.',
+    ];
   .freshfree-s_container.freshfree-development__container
-    div(class=[
-      getModifiers('freshfree-s_textblock', ['white']),
-      'freshfree-development__textblock',
-    ])
-      h2.freshfree-s_headline.freshfree-s_textblock__headline.freshfree-development__headline Разработка
-      p.freshfree-s_paragraph(class=[
-          getModifiers('freshfree-s_textblock__paragraph', ['last']),
-          getModifiers('freshfree-development__paragraph', [1]),
-        ]) Основной задачей на данном этапе стала реализация системы лояльности, которая помогает формировать клиентскую базу. Покупатели получают специальные бонусы на праздники, дни рождения, а также в зависимости от совершаемых покупок начисляются баллы, которыми можно расплачиваться в дальнейшем.
-      p.freshfree-s_subtitle.freshfree-s_textblock__subtitle.freshfree-development__subtitle Верстка и программирование
-      p.freshfree-s_paragraph.freshfree-s_textblock__paragraph(
-        class=[
-          getModifiers('freshfree-s_textblock__paragraph', ['last']),
-          getModifiers('freshfree-development__paragraph', [2]),
-        ]) Для проекта была подобрана оптимальная команда, которая позволила разработать проект отконцепции с учетом пожеланий клиента до полной реализации и развития интернет -магазина.
+    each paragraph, index in DEVELOPMENT_PARAGRAPHS
+      div(class=[
+        getModifiers('freshfree-s_textblock', ['white']),
+        getModifiers('freshfree-development__textblock', [index + 1]),
+      ])
+        case index
+          when 0
+            h2.freshfree-s_headline.freshfree-s_textblock__headline.freshfree-development__headline Разработка
+          when 1
+            p.freshfree-s_subtitle.freshfree-s_textblock__subtitle.freshfree-development__subtitle Верстка и программирование
+        p.freshfree-s_paragraph(class=[
+            getModifiers('freshfree-s_textblock__paragraph', ['last']),
+            'freshfree-development__paragraph',
+          ])= paragraph
 
+//- TODO:
+  проверить отступ 1-го textblock'а
