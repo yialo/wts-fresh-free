@@ -1,0 +1,34 @@
+.freshfree-intro.freshfree-page__intro
+  -
+    const INTRO_PARAGRAPHS = [
+      'Разработка интернет-магазина высококачественных продуктов питания, пищевых добавоки косметики, который будет вызывать у пользователей правильные ассоциации - натуральные продукты для здорового образа жизни.',
+      'Основная задача - показать пользователям доступным языком все выгоды от приобретения инновационных продуктовпитания.',
+    ];
+  .freshfree-s_container.freshfree-intro__container
+    .freshfree-logo.freshfree-intro__logo
+      img.freshfree-logo__image(
+        src='img/freshfree-logo.svg',
+        alt='Fresh & Free',
+        width='648',
+        height='111',
+      )
+      h1.freshfree-s_visually-hidden.freshfree-logo__wrapper
+        | Fresh & Free
+    .freshfree-s_textblock.freshfree-intro__textblock
+      h2(class=[
+        'freshfree-s_headline',
+        'freshfree-s_textblock__headline',
+        'freshfree-intro__headline',
+      ]) Задача
+      each paragraph, index in INTRO_PARAGRAPHS
+        - const number = index + 1;
+        p.freshfree-s_paragraph(class=[
+          'freshfree-s_textblock__paragraph',
+          (
+            number === INTRO_PARAGRAPHS.length
+            ? 'freshfree-s_textblock__paragraph--last'
+            : null
+          ),
+          'freshfree-intro__paragraph',
+          `freshfree-intro__paragraph--${number}`,
+        ])= paragraph

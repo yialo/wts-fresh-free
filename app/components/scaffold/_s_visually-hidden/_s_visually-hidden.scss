@@ -1,0 +1,9 @@
+.freshfree-s_visually-hidden {
+  @at-root {
+    &:not(:focus):not(:active),
+    input[type="checkbox"]#{&},
+    input[type="radio"]#{&} {
+      @include visually-hiding();
+    }
+  }
+}
