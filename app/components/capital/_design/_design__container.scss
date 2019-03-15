@@ -1,15 +1,19 @@
 .freshfree-design__container {
+  $design-container-backgrounds: (
+    (
+      "linear-gradient(180deg, #{$gray-background} 922px, transparent 922px)",
+      "top left",
+      "auto",
+      "no-repeat",
+    ),
+    (
+      "url(\"../img/freshfree-design__container.svg\")",
+      "calc(100% + 118px) calc(100% + 69px)",
+      "1020px 1097px",
+      "no-repeat",
+    ),
+  );
+
+  @include set-background($design-container-backgrounds);
   padding-top: 106px;
-  background-image:
-    linear-gradient(180deg, $gray-background 922px, transparent 922px),
-    url("../img/freshfree-design__container.svg");
-  background-position:
-    top left,
-    calc(100% + 118px) calc(100% + 69px);
-  background-size:
-    auto,
-    1020px 1097px;
-  background-repeat:
-    no-repeat,
-    no-repeat;
 }

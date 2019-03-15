@@ -1,0 +1,36 @@
+@mixin set-background($backgrounds) {
+  $last: length($backgrounds);
+  $images: "";
+  $positions: "";
+  $sizes: "";
+  $repeats: "";
+
+  @for $n from 1 through $last {
+    $set: nth($backgrounds, $n);
+    $image-to-add: "";
+    $position-to-add: "";
+    $size-to-add: "";
+    $repeat-to-add: "";
+
+    @if $n != $last {
+      $image-to-add: str-insert(nth($set, 1), ", ", -1);
+      $position-to-add: str-insert(nth($set, 2), ", ", -1);
+      $size-to-add:  str-insert(nth($set, 3), ", ", -1);
+      $repeat-to-add: str-insert(nth($set, 4), ", ", -1);
+    } @else {
+      $image-to-add: nth($set, 1);
+      $position-to-add: nth($set, 2);
+      $size-to-add: nth($set, 3);
+      $repeat-to-add: nth($set, 4);
+    }
+    $images: str-insert($images, $image-to-add, -1);
+    $positions: str-insert($positions, $position-to-add, -1);
+    $sizes: str-insert($sizes, $size-to-add, -1);
+    $repeats: str-insert($repeats, $repeat-to-add, -1);
+  }
+
+  background-image: #{$images};
+  background-position: #{$positions};
+  background-size: #{$sizes};
+  background-repeat: #{$repeats};
+}
