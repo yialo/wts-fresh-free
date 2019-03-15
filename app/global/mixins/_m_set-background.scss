@@ -2,6 +2,7 @@
   $initial-props: map-keys(nth($data, 1));
   $props-length: length($initial-props);
   $data-length: length($data);
+
   $props: ();
 
   @each $value in $initial-props {
@@ -16,8 +17,8 @@
 
     @for $j from 1 through $data-length {
       $current-data-item: nth($data, $j);
-      $current-datum: nth($current-data-item, $i);
-      $current-value: nth($current-datum, 2);
+      $current-values: map-values($current-data-item);
+      $current-value: nth($current-values, $i);
 
       @if $j != $data-length {
         $swap-string: str-insert($current-value, ", ", -1);
