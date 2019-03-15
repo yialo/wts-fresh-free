@@ -1,8 +1,9 @@
 .freshfree-design__textblock {
   &--full {
     grid-area: 1 / 1 / 2 / 2;
+    align-self: start;
     width: 420px;
-    margin-bottom: 156px;
+    margin-bottom: 64px;
   }
 
   &--subtitled {
@@ -10,5 +11,12 @@
     width: 390px;
     margin-top: 100px;
     margin-left: 45px;
+  }
+
+  &--headless {
+    grid-area: 3 / 2 / 4 / 3;
+    width: 520px;
+    margin-top: 118px;
+    margin-left: 103px;
   }
 }

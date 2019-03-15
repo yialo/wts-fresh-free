@@ -8,7 +8,7 @@
     ),
     (
       image: "url(\"../img/freshfree-design__container.svg\")",
-      position: "calc(100% + 118px) calc(100% + 69px)",
+      position: "calc(100% + 116px) calc(100% - 508px)",
       size: "1020px 1097px",
       repeat: "no-repeat",
     ),
@@ -16,4 +16,6 @@
 
   @include set-background($design-background-data);
   padding-top: 106px;
+  padding-bottom: 112px;
+  background-color: $gray-ligth;
 }

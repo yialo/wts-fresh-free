@@ -1,0 +1,13 @@
+.freshfree-features.freshfree-design__features
+  -
+    const FEATURES_ITEMS = [
+      ['shield', 'Иммунитет'],
+      ['brain', 'Думай быстро'],
+      ['shape', 'Держи форму'],
+      ['lightning', 'Энергия'],
+    ];
+  ul.freshfree-features__list
+    each item in FEATURES_ITEMS
+      - const [modifier, text] = item;
+      li(class=getModifiers('freshfree-features__item', [modifier]))= text
+

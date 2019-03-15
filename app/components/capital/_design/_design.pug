@@ -1,4 +1,11 @@
 .freshfree-design(class=getModifiers('freshfree-page__nest', ['design']))
+  mixin freshfree-design__picture(modifier)
+    - const ext = (modifier === 3 ? 'png' : 'jpg');
+    +freshfree-s_picture()(
+      class=getModifiers('freshfree-design__picture', [modifier]),
+      src=`img/freshfree-design__image--${modifier}.${ext}`,
+      alt=`Пример дизайна страницы №${modifier}`,
+    )
   .freshfree-s_container.freshfree-design__container
     div(class=getModifiers('freshfree-design__row', ['top']))
       div(class=[
@@ -14,11 +21,7 @@
           'freshfree-design__paragraph',
         ]) Аудит и тестирование аналогичных интернет-магазинов показали, что для пользователей важно наличие на сайте ярких и насыщенных фотографий продукции.
       each number in [1, 2]
-        +freshfree-s_picture()(
-          class=getModifiers('freshfree-design__picture', [number]),
-          src=`img/freshfree-design__image--${number}.jpg`,
-          alt=`Пример дизайна страницы №${number}`,
-        )
+        +freshfree-design__picture(number)
       div(class=[
         'freshfree-s_textblock',
         getModifiers('freshfree-design__textblock', ['subtitled']),
@@ -31,4 +34,16 @@
           getModifiers('freshfree-s_textblock__paragraph', ['last']),
           getModifiers('freshfree-design__paragraph', ['low']),
         ]) Для каталога и карточки товара мы сделали удобную систему фильтрации по хэштегам.
+      include ../_features/_features
     div(class=getModifiers('freshfree-design__row', ['bottom']))
+      +freshfree-design__picture(3)
+      .freshfree-design__inner-wrapper
+        +freshfree-design__picture(4)
+      div(class=[
+        'freshfree-s_textblock',
+        getModifiers('freshfree-design__textblock', ['headless']),
+      ])
+        p.freshfree-s_paragraph(class=[
+          getModifiers('freshfree-s_textblock__paragraph', ['last']),
+          'freshfree-design__paragraph',
+        ]) В карточках товара указали полезные свойства продуктов, их состав, а также действующие акции, позволяющие приобрести продукты дешевле в зависимости от способа оплаты и объема покупки.

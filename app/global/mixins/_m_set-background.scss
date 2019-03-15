@@ -5,7 +5,7 @@
 
   @for $i from 1 through $props-length {
     $initial-prop: nth($initial-props, $i);
-    $prop: "background-#{$initial-prop}";
+    $prop: background-#{$initial-prop};
     $value: "";
 
     @for $j from 1 through $data-length {

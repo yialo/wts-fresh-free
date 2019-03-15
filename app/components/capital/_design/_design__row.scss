@@ -2,9 +2,20 @@
   display: grid;
 
   &--top {
-    grid-template: 1fr repeat(3, auto) / auto 24px 1fr;
-    margin-bottom: 86px;
+    grid-template-rows:
+      minmax(482px, auto)
+      minmax(559px, auto)
+      minmax(300px, auto)
+      1fr;
+    grid-template-columns: auto 24px 1fr;
+    margin-bottom: 77px;
     padding-left: var(--g_page-left-shift);
     padding-right: 144px;
+  }
+
+  &--bottom {
+    grid-template-rows: 90px 493px 1fr;
+    grid-template-columns: 554px 803px;
+    justify-content: space-between;
   }
 }

@@ -1,14 +1,25 @@
 .freshfree-design__picture {
+  $design-picture-sizes: (531 860, 542 1041, 554 786, 664 423,);
+
+  @for $i from 1 through length($design-picture-sizes) {
+    &--#{$i} {
+      $sizes: nth($design-picture-sizes, $i);
+
+      width: #{nth($sizes, 1)}px;
+      height: #{nth($sizes, 2)}px;
+    }
+  }
+
   &--1 {
     grid-area: 2 / 1 / 4 / 3;
     z-index: 1;
-    width: 531px;
-    height: 860px;
   }
 
   &--2 {
-    grid-area: 1 / 2 / 4 / 4;
-    width: 542px;
-    height: 1041px;
+    grid-area: 1 / 2 / 3 / 4;
+  }
+
+  &--3 {
+    grid-area: 1 / 1 / 4 / 2;
   }
 }

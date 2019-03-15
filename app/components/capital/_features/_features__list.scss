@@ -1,0 +1,7 @@
+.freshfree-features__list {
+  @include list();
+  display: grid;
+  grid-template-columns: repeat(2, 160px);
+  grid-row-gap: 32px;
+  justify-content: space-between;
+}
