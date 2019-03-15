@@ -1,18 +1,26 @@
 @mixin set-background($backgrounds) {
-  $last: length($backgrounds);
+  $sets-length: length($backgrounds);
+  $props-length: length(nth($backgrounds, 1));
+
   $images: "";
   $positions: "";
   $sizes: "";
   $repeats: "";
 
-  @for $n from 1 through $last {
-    $set: nth($backgrounds, $n);
-    $image-to-add: "";
-    $position-to-add: "";
-    $size-to-add: "";
-    $repeat-to-add: "";
+  @for $set-number from 1 through $sets-length {
+    $set: nth($backgrounds, $set-number);
+    $to-add: ();
 
-    @if $n != $last {
+    @for $prop-number from 1 through $props-length {
+      $to-add: append($to-add, "");
+    }
+
+    $image-to-add: nth($to-add, 1);
+    $position-to-add: nth($to-add, 2);
+    $size-to-add: nth($to-add, 3);
+    $repeat-to-add: nth($to-add, 4);
+
+    @if $set-number != $sets-length {
       $image-to-add: str-insert(nth($set, 1), ", ", -1);
       $position-to-add: str-insert(nth($set, 2), ", ", -1);
       $size-to-add:  str-insert(nth($set, 3), ", ", -1);
@@ -23,6 +31,7 @@
       $size-to-add: nth($set, 3);
       $repeat-to-add: nth($set, 4);
     }
+
     $images: str-insert($images, $image-to-add, -1);
     $positions: str-insert($positions, $position-to-add, -1);
     $sizes: str-insert($sizes, $size-to-add, -1);
