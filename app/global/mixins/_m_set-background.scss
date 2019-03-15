@@ -15,8 +15,9 @@
     $value: "";
 
     @for $j from 1 through $data-length {
-      $current-datum: nth($data, $j);
-      $current-value: nth(nth($current-datum, $i), 2);
+      $current-data-item: nth($data, $j);
+      $current-datum: nth($current-data-item, $i);
+      $current-value: nth($current-datum, 2);
 
       @if $j != $data-length {
         $swap-string: str-insert($current-value, ", ", -1);
