@@ -1,5 +1,5 @@
 .freshfree-design__container {
-  $design-container-backgrounds: (
+  $design-container-bg-data: (
     (
       "linear-gradient(180deg, #{$gray-background} 922px, transparent 922px)",
       "top left",
@@ -13,7 +13,16 @@
       "no-repeat",
     ),
   );
+  $design-container-bg-props: (
+    background-image,
+    background-position,
+    background-size,
+    background-repeat,
+  );
 
-  @include set-background($design-container-backgrounds);
+  @include set-background(
+    $design-container-bg-data,
+    $design-container-bg-props
+  );
   padding-top: 106px;
 }
