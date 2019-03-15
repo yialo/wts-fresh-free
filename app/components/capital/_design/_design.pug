@@ -6,7 +6,9 @@
         getModifiers('freshfree-design__textblock', ['full']),
       ])
         h2.freshfree-s_headline.freshfree-s_textblock__headline.freshfree-design__headline Дизайн
-        p.freshfree-s_subtitle.freshfree-s_textblock__subtitle.freshfree-design__subtitle Разработка дизайна главной страницы
+        p.freshfree-s_subtitle.freshfree-s_textblock__subtitle(
+          class=getModifiers('freshfree-design__subtitle', ['narrow'])
+        ) Разработка дизайна главной страницы
         p.freshfree-s_paragraph(class=[
           getModifiers('freshfree-s_textblock__paragraph', ['last']),
           'freshfree-design__paragraph',
@@ -17,3 +19,16 @@
           src=`img/freshfree-design__image--${number}.jpg`,
           alt=`Пример дизайна страницы №${number}`,
         )
+      div(class=[
+        'freshfree-s_textblock',
+        getModifiers('freshfree-design__textblock', ['subtitled']),
+      ])
+        h3(class=[
+          getModifiers('freshfree-s_subtitle', ['large']),'freshfree-s_textblock__subtitle',
+          'freshfree-design__subtitle'
+        ]) Каталог и карточка товара
+        p.freshfree-s_paragraph(class=[
+          getModifiers('freshfree-s_textblock__paragraph', ['last']),
+          getModifiers('freshfree-design__paragraph', ['low']),
+        ]) Для каталога и карточки товара мы сделали удобную систему фильтрации по хэштегам.
+    div(class=getModifiers('freshfree-design__row', ['bottom']))

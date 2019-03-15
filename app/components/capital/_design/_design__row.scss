@@ -3,6 +3,7 @@
 
   &--top {
     grid-template: 1fr repeat(3, auto) / auto 24px 1fr;
+    margin-bottom: 86px;
     padding-left: var(--g_page-left-shift);
     padding-right: 144px;
   }
