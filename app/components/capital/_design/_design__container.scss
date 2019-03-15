@@ -1,28 +1,19 @@
 .freshfree-design__container {
-  $design-container-bg-data: (
+  $design-background-data: (
     (
-      "linear-gradient(180deg, #{$gray-background} 922px, transparent 922px)",
-      "top left",
-      "auto",
-      "no-repeat",
+      image: "linear-gradient(180deg, #{$gray-background} 922px, transparent 922px)",
+      position: "top left",
+      size: "auto",
+      repeat: "no-repeat",
     ),
     (
-      "url(\"../img/freshfree-design__container.svg\")",
-      "calc(100% + 118px) calc(100% + 69px)",
-      "1020px 1097px",
-      "no-repeat",
+      image: "url(\"../img/freshfree-design__container.svg\")",
+      position: "calc(100% + 118px) calc(100% + 69px)",
+      size: "1020px 1097px",
+      repeat: "no-repeat",
     ),
-  );
-  $design-container-bg-props: (
-    background-image,
-    background-position,
-    background-size,
-    background-repeat,
   );
 
-  @include set-background(
-    $design-container-bg-data,
-    $design-container-bg-props
-  );
+  @include set-background($design-background-data);
   padding-top: 106px;
 }
