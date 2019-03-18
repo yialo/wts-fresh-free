@@ -9,13 +9,22 @@ html {
 }
 
 body {
-  @include font();
   min-width: $s-min-width;
   margin: 0;
+  font-weight: 400;
   font-style: normal;
+  font-size: 16px;
   line-height: 1;
-  color: $gray-text-basis;
+  font-family: "helveticaneuecyr", "Arial", sans-serif;
+  color: black;
   background-color: white;
+
+  @media (min-width: $xl-min-width) {
+    font-weight: 300;
+    font-size: 22px;
+    letter-spacing: 0.25px;
+    color: $gray-text-basis;
+  }
 }
 
 a {

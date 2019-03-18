@@ -1,10 +1,12 @@
 .freshfree-s_subtitle {
-  @include font(900, 14px);
   margin-top: 0;
   margin-bottom: 0;
+  font-weight: 900;
+  font-size: 14px;
 
   @media (min-width: $xl-min-width) {
-    @include font(500, 22px);
+    font-weight: 500;
+    font-size: 22px;
     line-height: 28px;
 
     &--large {
