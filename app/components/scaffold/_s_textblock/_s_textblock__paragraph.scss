@@ -1,3 +1,11 @@
 .freshfree-s_textblock__paragraph {
-  @include margin-bottom-last(32px);
+  @media (max-width: $l-max-width) {
+    .freshfree-s_textblock--light & {
+      color: #cccccc;
+    }
+  }
+
+  @media (min-width: $xl-min-width) {
+    @include margin-bottom-last(32px);
+  }
 }

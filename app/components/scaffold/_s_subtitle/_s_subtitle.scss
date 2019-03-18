@@ -4,6 +4,11 @@
   font-weight: 900;
   font-size: 14px;
 
+  @media (max-width: $l-max-width) {
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
   @media (min-width: $xl-min-width) {
     font-weight: 500;
     font-size: 22px;
