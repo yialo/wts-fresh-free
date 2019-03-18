@@ -1,7 +1,12 @@
 .freshfree-intro__container {
-  display: grid;
-  grid-template: 111px 1fr / 646px 1fr;
-  padding-top: 175px;
-  padding-left: var(--g_page-left-shift);
-  padding-bottom: 128px;
+  padding-top: 24px;
+  padding-bottom: 40px;
+
+  @media (min-width: $xl-min-width) {
+    display: grid;
+    grid-template: 111px 1fr / 646px 1fr;
+    padding-top: 175px;
+    padding-left: var(--g_page-left-shift);
+    padding-bottom: 128px;
+  }
 }

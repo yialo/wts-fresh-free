@@ -1,6 +1,11 @@
 .freshfree-s_container {
+  @include outline(green);
   @include margin-hor();
   width: $s-min-width;
+
+  @media (max-width: $l-max-width) {
+    @include padding-hor();
+  }
 
   @media (min-width: $xl-min-width) {
     width: $xl-min-width;

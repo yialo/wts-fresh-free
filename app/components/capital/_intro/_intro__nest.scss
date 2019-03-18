@@ -1,12 +1,15 @@
 .freshfree-intro__nest {
   &--logo {
-    width: 288px;
-    height: 48px;
+    margin-bottom: 40px;
+  }
+
+  &--textblock {
+    margin-bottom: 40px;
   }
 
   &--picture {
     width: 285px;
-    height: 288px;
+    margin-left: 2px;
   }
 
   @media (min-width: $xl-min-width) {
@@ -14,18 +17,21 @@
       grid-area: 1 / 1 / 2 / 3;
       width: 648px;
       height: 111px;
+      margin-bottom: 0;
     }
 
     &--textblock {
       grid-area: 2 / 1 / 2 / 3;
       width: 578px;
       margin-top: 184px;
+      margin-bottom: 0;
     }
 
     &--picture {
       grid-area: 2 / 2 / 3 / 3;
       width: 442px;
       height: 446px;
+      margin-left: 0;
     }
   }
 }

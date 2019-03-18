@@ -1,4 +1,14 @@
-mixin freshfree-s_picture()
-  - const { class: classnames, src, alt, role } = attributes;
-  picture.freshfree-s_picture(class=classnames)
-    img.freshfree-s_picture__image(src=src, alt=alt, role=role)
+mixin freshfree-s_picture(props)
+  -
+    const { alt } = props;
+    const VIEWPORTS = {
+      S: '(max-width: 767px)',
+      L: '(max-width: 1399px)',
+    };
+    const { class: classnames, src, alt, role } = attributes;
+  picture.freshfree-s_picture(class=classnames, role=role)
+    source(media='max-width: 1399px', srcset=src-large)
+    img.freshfree-s_picture__image(src=src, alt=alt)
+
+//- FIXME:
+  fix this
