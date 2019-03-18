@@ -1,19 +1,31 @@
 .freshfree-intro__nest {
   &--logo {
-    grid-area: 1 / 1 / 2 / 3;
-    width: 648px;
-    height: 111px;
-  }
-
-  &--textblock {
-    grid-area: 2 / 1 / 2 / 3;
-    width: 578px;
-    margin-top: 184px;
+    width: 288px;
+    height: 48px;
   }
 
   &--picture {
-    grid-area: 2 / 2 / 3 / 3;
-    width: 442px;
-    height: 446px;
+    width: 285px;
+    height: 288px;
+  }
+
+  @media (min-width: $xl-min-width) {
+    &--logo {
+      grid-area: 1 / 1 / 2 / 3;
+      width: 648px;
+      height: 111px;
+    }
+
+    &--textblock {
+      grid-area: 2 / 1 / 2 / 3;
+      width: 578px;
+      margin-top: 184px;
+    }
+
+    &--picture {
+      grid-area: 2 / 2 / 3 / 3;
+      width: 442px;
+      height: 446px;
+    }
   }
 }

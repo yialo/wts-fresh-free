@@ -7,7 +7,7 @@ head
     - const [name, content] = item;
     meta(name=name, content=content)
   each value, key in FONT_SETS
-    each weightValue in value.weightNames
+    each weightValue in value.weightSizes
       each styleValue in value.styleNames
         link(
           rel='preload',

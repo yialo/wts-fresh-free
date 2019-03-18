@@ -1,21 +1,26 @@
 .freshfree-s_headline {
-  @include font(700, 42px);
-  display: flex;
-  align-items: baseline;
-  margin-top: 0;
-  margin-bottom: 0;
-  line-height: 52px;
-  text-transform: uppercase;
+  @include font(700, 24px);
+  color: black;
 
-  &::before {
-    content: "";
-    width: 13px;
-    height: 29px;
-    margin-right: 32px;
-    background-color: $salad;
-  }
+  @media (min-width: $xl-min-width) {
+    font-size: 42px;
+    display: flex;
+    align-items: baseline;
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 52px;
+    text-transform: uppercase;
 
-  &--small {
-    font-size: 36px;
+    &::before {
+      content: "";
+      width: 13px;
+      height: 29px;
+      margin-right: 32px;
+      background-color: $salad;
+    }
+
+    &--small {
+      font-size: 36px;
+    }
   }
 }

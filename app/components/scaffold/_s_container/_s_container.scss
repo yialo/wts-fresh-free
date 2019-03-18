@@ -1,4 +1,8 @@
 .freshfree-s_container {
   @include margin-hor();
-  width: $l-max-width;
+  width: $s-min-width;
+
+  @media (min-width: $xl-min-width) {
+    width: $xl-min-width;
+  }
 }
