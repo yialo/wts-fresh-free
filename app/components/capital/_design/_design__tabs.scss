@@ -1,0 +1,9 @@
+.freshfree-design__tabs {
+  display: flex;
+  font-size: 16px;
+  letter-spacing: 0.04em;
+
+  @media (min-width: $xl-min-width) {
+    display: none;
+  }
+}

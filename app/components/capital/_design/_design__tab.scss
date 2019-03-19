@@ -1,0 +1,18 @@
+.freshfree-design__tab {
+  margin-right: 32px;
+  padding: 0;
+  color: white;
+  background-color: transparent;
+  border-style: none;
+
+  &--last {
+    margin-left: 0;
+  }
+
+  @each $modifier in (catalog, product-card,) {
+    .is-#{$modifier}-shown &--#{$modifier} {
+      color: $orange;
+      text-decoration: underline;
+    }
+  }
+}
