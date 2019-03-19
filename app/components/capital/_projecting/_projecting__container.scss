@@ -1,5 +1,13 @@
 .freshfree-projecting__container {
-  display: grid;
-  grid-template: auto 1fr / 1fr 590px;
-  grid-row-gap: 96px;
+  @media (max-width: $l-max-width) {
+    position: relative;
+    padding-top: 64px;
+    padding-bottom: 24px;
+  }
+
+  @media (min-width: $xl-min-width) {
+    display: grid;
+    grid-template: auto 1fr / 1fr 590px;
+    grid-row-gap: 96px;
+  }
 }

@@ -1,6 +1,12 @@
 .freshfree-projecting__textblock {
-  grid-area: 1 / 1 / 2 / 2;
-  width: 538px;
-  margin-top: 200px;
-  margin-left: var(--g_page-left-shift);
+  @media (max-width: $l-max-width) {
+    margin-bottom: 64px;
+  }
+
+  @media (min-width: $xl-min-width) {
+    grid-area: 1 / 1 / 2 / 2;
+    width: 538px;
+    margin-top: 200px;
+    margin-left: var(--g_page-left-shift);
+  }
 }

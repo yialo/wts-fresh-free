@@ -1,11 +1,17 @@
 .freshfree-projecting(
   class=getModifiers('freshfree-page__nest', ['projecting'])
 )
-  - const PROJECTING_ASIDE_PICTURES = ['Ветка', 'Орехи и сухофрукты'];
+  -
+    const PROJECTING_ASIDE_PICTURES = [
+      [[['L', 304], 170], 'Ветка'],
+      [[683], 'Орехи и сухофрукты'],
+    ];
   mixin freshfree-projecting__picture--flow(number)
-    +freshfree-s_picture()(
+    - const PROJECTING_FLOW_PICTURES = [[['L', 533], 288], [[528]]];
+    +freshfree-s_picture(PROJECTING_FLOW_PICTURES[number - 1])(
       class=getModifiers('freshfree-projecting__picture', [`flow-${number}`]),
-      src=`img/freshfree-projecting__image--flow-${number}.jpg`,
+      pathBase=`freshfree-projecting__image--flow-${number}`,
+      ext='jpg',
       alt=`Пример страницы №${number}`,
     )
   .freshfree-s_container.freshfree-projecting__container
@@ -23,13 +29,16 @@
     .freshfree-projecting__inner-wrapper
       +freshfree-projecting__picture--flow(2)
     each picture, index in PROJECTING_ASIDE_PICTURES
-       - const number = index + 1;
-       +freshfree-s_picture()(
-          class=getModifiers(
-            'freshfree-projecting__picture',
-            ['aside', `aside-${number}`]
-          ),
-          src=`img/freshfree-projecting__image--aside-${number}.png`,
-          alt=picture,
-          role='presentation',
-       )
+      -
+        const number = index + 1;
+        const [mediaSet, alt] = picture;
+      +freshfree-s_picture(mediaSet)(
+        class=getModifiers(
+          'freshfree-projecting__picture',
+          ['aside', `aside-${number}`]
+        ),
+        pathBase=`freshfree-projecting__image--aside-${number}`,
+        ext='png',
+        alt=alt,
+        role='presentation',
+      )
