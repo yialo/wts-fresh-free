@@ -1,8 +1,5 @@
 .freshfree-intro(class=getModifiers('freshfree-page__nest', ['intro']))
   -
-    const INTRO_PICTURE = {
-      alt: 'Чашка с чаем',
-    };
     const INTRO_PARAGRAPHS = [
       'Разработка интернет-магазина высококачественных продуктов питания, пищевых добавоки косметики, который будет вызывать у пользователей правильные ассоциации - натуральные продукты для здорового образа жизни.',
       'Основная задача - показать пользователям доступным языком все выгоды от приобретения инновационных продуктовпитания.',
@@ -28,8 +25,9 @@
           getLastModifier('freshfree-s_textblock__paragraph', INTRO_PARAGRAPHS, number),
           getModifiers('freshfree-s_textblock__paragraph', [number]),
         ])= paragraph
-    +freshfree-s_picture()(
+    +freshfree-s_picture([['L', 442], 285])(
       class=getModifiers('freshfree-intro__nest', ['picture']),
-      src='img/freshfree-intro__picture.png',
+      pathBase='freshfree-intro__picture',
+      ext='png',
       alt='Чашка с чаем',
     )

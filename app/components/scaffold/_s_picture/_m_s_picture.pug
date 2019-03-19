@@ -1,14 +1,17 @@
-mixin freshfree-s_picture(props)
+mixin freshfree-s_picture(mediaSet)
   -
-    const { alt } = props;
-    const VIEWPORTS = {
-      S: '(max-width: 767px)',
-      L: '(max-width: 1399px)',
-    };
-    const { class: classnames, src, alt, role } = attributes;
+    const VIEWPORTS = { L: '(min-width: 1400px)', M: '(min-width: 768px)' };
+    const { class: classnames, pathBase, ext, alt, role } = attributes;
   picture.freshfree-s_picture(class=classnames, role=role)
-    source(media='max-width: 1399px', srcset=src-large)
-    img.freshfree-s_picture__image(src=src, alt=alt)
-
-//- FIXME:
-  fix this
+    each item, index in mediaSet
+      if index !== mediaSet.length - 1
+        - const [mq, width] = item;
+        source(
+          media=VIEWPORTS[mq],
+          srcset=`img/${pathBase}@${width}.${ext}`,
+        )
+      else
+        img.freshfree-s_picture__image(
+          src=`img/${pathBase}@${item}.${ext}`,
+          alt=alt,
+        )

@@ -1,4 +1,10 @@
 .freshfree-analysis__paragraph {
+  @media (max-width: $l-max-width) {
+    .freshfree-analysis__textblock & {
+      color: black;
+    }
+  }
+
   &--1 {
     font-weight: 500;
   }

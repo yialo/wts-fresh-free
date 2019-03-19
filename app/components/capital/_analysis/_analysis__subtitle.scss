@@ -1,3 +1,9 @@
 .freshfree-analysis__subtitle {
-  width: 340px;
+  @media (max-width: $l-max-width) {
+    margin-bottom: 24px;
+  }
+
+  @media (min-width: $xl-min-width) {
+    width: 340px;
+  }
 }

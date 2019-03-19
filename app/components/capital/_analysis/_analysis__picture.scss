@@ -1,8 +1,13 @@
 .freshfree-analysis__picture {
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  left: 0;
-  width: 1400px;
-  height: 934px;
+  display: none;
+
+  @media (min-width: $xl-min-width) {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 1400px;
+    height: 934px;
+  }
 }

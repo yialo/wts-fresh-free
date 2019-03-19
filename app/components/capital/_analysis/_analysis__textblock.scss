@@ -1,3 +1,9 @@
 .freshfree-analysis__textblock {
-  width: 418px;
+  @media (max-width: $l-max-width) {
+    color: black;
+  }
+
+  @media (min-width: $xl-min-width) {
+    width: 418px;
+  }
 }
