@@ -1,6 +1,14 @@
 .freshfree-design__inner-wrapper {
-  grid-area: 2 / 2 / 3 / 3;
-  padding-top: 67px;
-  padding-left: 54px;
   background-color: white;
+
+  @media (max-width: $l-max-width) {
+    @include padding-hor();
+    display: none;
+  }
+
+  @media (min-width: $xl-min-width) {
+    grid-area: 2 / 2 / 3 / 3;
+    padding-top: 67px;
+    padding-left: 54px;
+  }
 }

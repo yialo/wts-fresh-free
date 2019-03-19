@@ -1,9 +1,17 @@
 .freshfree-design(class=getModifiers('freshfree-page__nest', ['design']))
   mixin freshfree-design__picture(modifier)
-    - const ext = (modifier === 3 ? 'png' : 'jpg');
-    +freshfree-s_picture()(
+    -
+      const ext = (modifier === 3 ? 'png' : 'jpg');
+      const DESIGN_PICTURES = [
+        [[531]],
+        [['L', 542], 288],
+        [['L', 554], 320],
+        [['L', 664], 288],
+      ];
+    +freshfree-s_picture(DESIGN_PICTURES[modifier - 1])(
       class=getModifiers('freshfree-design__picture', [modifier]),
-      src=`img/freshfree-design__image--${modifier}.${ext}`,
+      pathBase=`freshfree-design__image--${modifier}`,
+      ext=ext,
       alt=`Пример дизайна страницы №${modifier}`,
     )
   .freshfree-s_container.freshfree-design__container

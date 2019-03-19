@@ -1,0 +1,7 @@
+.freshfree-development__paragraph {
+  @media (max-width: $l-max-width) {
+    .freshfree-development__textblock & {
+      color: black;
+    }
+  }
+}

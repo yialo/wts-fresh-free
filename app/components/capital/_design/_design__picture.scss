@@ -1,25 +1,44 @@
 .freshfree-design__picture {
-  $design-picture-sizes: (531 860, 542 1041, 554 786, 664 423,);
+  @mixin design-picture-sizes($set) {
+    $design-picture-sizes: (
+      s: (531 860, 288 553, 320 448, 288 183,),
+      xl: (531 860, 542 1041, 554 786, 664 423,),
+    );
 
-  @for $i from 1 through length($design-picture-sizes) {
-    &--#{$i} {
-      $sizes: nth($design-picture-sizes, $i);
+    $sizes: map-get($design-picture-sizes, $set);
 
-      width: #{nth($sizes, 1)}px;
-      height: #{nth($sizes, 2)}px;
+    @for $i from 1 through length($sizes) {
+      &--#{$i} {
+        $size: nth($sizes, $i);
+
+        width: #{nth($size, 1)}px;
+        height: #{nth($size, 2)}px;
+      }
     }
   }
 
-  &--1 {
-    grid-area: 2 / 1 / 4 / 3;
-    z-index: 1;
+  @media (max-width: $l-max-width) {
+    @include design-picture-sizes(s);
+
+    &--1 {
+      display: none;
+    }
   }
 
-  &--2 {
-    grid-area: 1 / 2 / 3 / 4;
-  }
+  @media (min-width: $xl-min-width) {
+    @include design-picture-sizes(xl);
 
-  &--3 {
-    grid-area: 1 / 1 / 4 / 2;
+    &--1 {
+      grid-area: 2 / 1 / 4 / 3;
+      z-index: 1;
+    }
+
+    &--2 {
+      grid-area: 1 / 2 / 3 / 4;
+    }
+
+    &--3 {
+      grid-area: 1 / 1 / 4 / 2;
+    }
   }
 }

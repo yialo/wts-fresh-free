@@ -1,10 +1,19 @@
 .freshfree-development__textblock {
-  &--1 {
-    width: 700px;
-    margin-bottom: 64px;
+  @include margin-bottom-last(40px);
+
+  @media (max-width: $l-max-width) {
+    color: black;
   }
 
-  &--2 {
-    width: 650px;
+  @media (min-width: $xl-min-width) {
+    @include margin-bottom-last(64px);
+
+    &--1 {
+      width: 700px;
+    }
+
+    &--2 {
+      width: 650px;
+    }
   }
 }

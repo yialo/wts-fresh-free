@@ -1,5 +1,7 @@
 .freshfree-design__subtitle {
-  &--narrow {
-    width: 240px;
+  @media (min-width: $xl-min-width) {
+    &--narrow {
+      width: 240px;
+    }
   }
 }

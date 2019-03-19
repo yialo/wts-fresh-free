@@ -8,14 +8,16 @@
     ];
   .freshfree-s_container.freshfree-development__container
     each paragraph, index in DEVELOPMENT_PARAGRAPHS
+      - const number = index + 1;
       div(class=[
         getModifiers('freshfree-s_textblock', ['light']),
-        getModifiers('freshfree-development__textblock', [index + 1]),
+        getModifiers('freshfree-development__textblock', [number]),
+        getLastModifier('freshfree-development__textblock', DEVELOPMENT_PARAGRAPHS, number, false),
       ])
-        case index
-          when 0
-            h2.freshfree-s_headline.freshfree-s_textblock__headline.freshfree-development__headline Разработка
+        case number
           when 1
+            h2.freshfree-s_headline.freshfree-s_textblock__headline.freshfree-development__headline Разработка
+          when 2
             h3.freshfree-s_subtitle.freshfree-s_textblock__subtitle.freshfree-development__subtitle Верстка и программирование
         p.freshfree-s_paragraph(class=[
             getModifiers('freshfree-s_textblock__paragraph', ['last']),
