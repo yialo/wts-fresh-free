@@ -1,5 +1,13 @@
 .freshfree-design__paragraph {
-  &--low {
-    line-height: 24px;
+  @media (max-width: $l-max-width) {
+    .freshfree-design__textblock--subtitled & {
+      color: $gray-paragraph;
+    }
+  }
+
+  @media (min-width: $xl-min-width) {
+    &--low {
+      line-height: 24px;
+    }
   }
 }

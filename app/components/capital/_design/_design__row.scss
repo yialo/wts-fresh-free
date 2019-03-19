@@ -1,4 +1,15 @@
 .freshfree-design__row {
+  &--top {
+    margin-bottom: 40px;
+  }
+
+  @media (max-width: $l-max-width) {
+    &--bottom {
+      position: relative;
+      padding-bottom: 472px;
+    }
+  }
+
   @media (min-width: $xl-min-width) {
     display: grid;
 

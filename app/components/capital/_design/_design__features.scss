@@ -1,7 +1,13 @@
 .freshfree-design__features {
-  grid-area: 3 / 3 / 5 / 4;
-  align-self: end;
-  width: 345px;
-  margin-top: 180px;
-  margin-left: 112px;
+  @media (max-width: $l-max-width) {
+    margin-bottom: 124px;
+  }
+
+  @media (min-width: $xl-min-width) {
+    grid-area: 3 / 3 / 5 / 4;
+    align-self: end;
+    width: 345px;
+    margin-top: 180px;
+    margin-left: 112px;
+  }
 }

@@ -23,6 +23,21 @@
     &--1 {
       display: none;
     }
+
+    &--2 {
+      margin-bottom: 64px;
+    }
+
+    &--3 {
+      position: absolute;
+      top: 48px;
+      left: -16px;
+      display: none;
+
+      .is-catalog-shown & {
+        display: block;
+      }
+    }
   }
 
   @media (min-width: $xl-min-width) {

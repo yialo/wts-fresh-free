@@ -1,27 +1,53 @@
 .freshfree-features__item {
-  @media (min-width: $xl-min-width) {
-    $features-items: (
-      (shield, 79px 88px,),
-      (brain, 103px 82px,),
-      (shape, 157px 71px,),
-      (lightning, 58px 103px,),
+  @mixin features-item-background($set) {
+    $features-backgrounds: (
+      s: (
+        (shield, 79px 88px,),
+        (brain, 103px 82px,),
+        (shape, 157px 71px,),
+        (lightning, 58px 103px,),
+      ),
+      xl: (
+        (shield, 79px 88px,),
+        (brain, 91px 73px,),
+        (shape, 135px 60px,),
+        (lightning, 56px 99px,),
+      ),
     );
 
-    font-weight: 400;
-    font-size: 16px;
-    padding-top: 128px;
-    line-height: 20px;
-    text-align: center;
-    text-transform: uppercase;
-    background-position-x: center;
-    background-repeat: no-repeat;
+    $background: map-get($features-backgrounds, $set);
 
-    @each $modifier, $sizes in $features-items {
+    @each $modifier, $sizes in $background {
       &--#{$modifier} {
         background-image: url("../img/freshfree-features__item--#{$modifier}.svg");
         background-position-y: if($modifier == shape, 25px, 0);
         background-size: $sizes;
       }
     }
+  }
+
+  font-size: 14px;
+  background-position-x: center;
+  background-repeat: no-repeat;
+
+  @media (max-width: $l-max-width) {
+    @include features-item-background(s);
+    padding-top: 120px;
+    letter-spacing: 0.04em;
+    text-align: center;
+    text-transform: uppercase;
+    color: white;
+
+    &--shape {
+      order: 1;
+    }
+  }
+
+  @media (min-width: $xl-min-width) {
+    @include features-item-background(xl);
+    font-weight: 400;
+    font-size: 16px;
+    padding-top: 128px;
+    line-height: 20px;
   }
 }

@@ -38,6 +38,7 @@
         ]) Аудит и тестирование аналогичных интернет-магазинов показали, что для пользователей важно наличие на сайте ярких и насыщенных фотографий продукции.
       each number in [1, 2]
         +freshfree-design__picture(number)
+      include ../_features/_features
       div(class=[
         'freshfree-s_textblock',
         getModifiers('freshfree-design__textblock', ['subtitled']),
@@ -50,7 +51,6 @@
           getModifiers('freshfree-s_textblock__paragraph', ['last']),
           getModifiers('freshfree-design__paragraph', ['low']),
         ]) Для каталога и карточки товара мы сделали удобную систему фильтрации по хэштегам.
-      include ../_features/_features
     div(class=getModifiers('freshfree-design__row', ['bottom']))
       .freshfree-design__tabs
         each tab, index in DESIGN_TABS

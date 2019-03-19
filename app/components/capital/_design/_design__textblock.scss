@@ -3,6 +3,22 @@
     &--full {
       margin-bottom: 40px;
     }
+
+    &--subtitled {
+      color: white;
+    }
+
+    &--headless {
+      position: absolute;
+      left: 0;
+      top: 279px;
+      display: none;
+      color: $gray-paragraph;
+
+      .is-product-card-shown & {
+        display: block;
+      }
+    }
   }
 
   @media (min-width: $xl-min-width) {

@@ -3,7 +3,15 @@
 
   @media (max-width: $l-max-width) {
     @include padding-hor();
+    position: absolute;
+    top: 48px;
+    left: -16px;
     display: none;
+    padding-top: 24px;
+
+    .is-product-card-shown & {
+      display: block;
+    }
   }
 
   @media (min-width: $xl-min-width) {
