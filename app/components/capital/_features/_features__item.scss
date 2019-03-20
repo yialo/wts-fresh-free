@@ -1,27 +1,19 @@
 .freshfree-features__item {
-  @mixin features-item-background($set) {
+  @mixin features-item-background($vp) {
     $features-backgrounds: (
-      s: (
-        (shield, 79px 88px,),
-        (brain, 103px 82px,),
-        (shape, 157px 71px,),
-        (lightning, 58px 103px,),
-      ),
-      xl: (
-        (shield, 79px 88px,),
-        (brain, 91px 73px,),
-        (shape, 135px 60px,),
-        (lightning, 56px 99px,),
-      ),
+      shield: (s: 79px 88px, xl: 79px 88px,),
+      brain: (s: 103px 82px, xl: 91px 73px,),
+      shape: (s: 157px 71px, xl: 135px 60px,),
+      lightning: (s: 58px 103px, xl: 56px 99px,),
     );
 
-    $background: map-get($features-backgrounds, $set);
+    @each $modifier, $bg-set in $features-backgrounds {
+      $bg-vp-sizes: map-get($bg-set, $vp);
 
-    @each $modifier, $sizes in $background {
       &--#{$modifier} {
         background-image: url("../img/freshfree-features__item--#{$modifier}.svg");
         background-position-y: if($modifier == shape, 25px, 0);
-        background-size: $sizes;
+        background-size: $bg-vp-sizes;
       }
     }
   }
