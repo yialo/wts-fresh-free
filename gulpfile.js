@@ -32,8 +32,8 @@ const bitmapExts = '{gif,jpg,png}';
 const fontExts = '{woff,woff2}';
 const jsPaths = [
   './app/scripts/*.js',
-  './app/vendors/*.js',
-  './app/vendors_customized/*.js',
+  './app/vendor/*.js',
+  './app/vendor_customized/*.js',
 ];
 
 // Task functions
